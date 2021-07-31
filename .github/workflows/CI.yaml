@@ -1,4 +1,4 @@
-name: "x86 and amd64 CI"
+name: CI
 
 on:
   push:
@@ -34,3 +34,26 @@ jobs:
       run: |
         cd ${{github.workspace}}/x86/sepia
         make x64
+
+  assemble_mips:
+    runs-on: ubuntu-latest
+    name: Build MIPS projects
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-java@v2
+
+    - name: Install MARS
+      run: wget -P ${{github.workspace}}/mips http://courses.missouristate.edu/kenvollmar/mars/MARS_4_5_Aug2014/Mars4_5.jar
+
+    - name: Assemble training projects
+      run: |
+        cd ${{github.workspace}}/mips/training
+        for file in *.asm;
+          do java -jar ../Mars4_5.jar a ae1 $file;
+          done
+        
+    - name: Assemble main project (C.asm)
+      run: |
+        cd ${{github.workspace}}/mips/main-project
+        java -jar ../Mars4_5.jar a ae1 C.asm
