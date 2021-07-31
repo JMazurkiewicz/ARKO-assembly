@@ -7,44 +7,29 @@ on:
     branches: [main]
 
 jobs:
-  install:
+  build_x86_and_amd64:
     runs-on: ubuntu-latest
-    name: Install dependencies
+    name: Build x86 and amd64 projects
 
     steps:
+    - uses: actions/checkout@v2
+
     - name: Install NASM
       run: sudo apt-get install nasm
 
     - name: Install GCC with 32-bit libraries
       run: sudo apt-get install gcc gcc-multilib
 
-  build_small_project:
-    runs-on: ubuntu-latest
-    name: Build small project (dcompl)
-    needs: install
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Build
+    - name: Build small project (dcompl)
       run: |
         cd ${{github.workspace}}/x86/small-project
         make
 
-
-  build_main_project:
-    runs-on: ubuntu-latest
-    name: Build main project (sepia)
-    needs: install
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: Build for x86
+    - name: Build main project (sepia) for x86
       run: |
-        cd ${{github.workspace}}/x86/sepia
+        cd ../sepia
         make x86
 
-    - name: Build for amd64
+    - name: Build main project (sepia) for amd64
       run: |
         make x64
