@@ -48,7 +48,7 @@ jobs:
         java-version: '11'
 
     - name: Install MARS
-      run: wget -P ${{github.workspace}}/mips http://courses.missouristate.edu/kenvollmar/mars/MARS_4_5_Aug2014/Mars4_5.jar
+      run: ./tools/install-mars.sh ${{github.workspace}}/mips
 
     - name: Assemble training projects
       run: |

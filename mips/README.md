@@ -4,7 +4,11 @@
 
 To run MIPS programs use [MARS MIPS simulator](http://courses.missouristate.edu/kenvollmar/mars/).
 
-You can download `MARS.jar` directly [here](http://courses.missouristate.edu/kenvollmar/mars/MARS_4_5_Aug2014/Mars4_5.jar).
+You can download `Mars.jar` directly [here](http://courses.missouristate.edu/kenvollmar/mars/MARS_4_5_Aug2014/Mars4_5.jar) or use `tools/install-mars.sh` script:
+
+```bash
+./tools/install-mars.sh [optional path]
+```
 
 ## Training
 
