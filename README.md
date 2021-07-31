@@ -3,7 +3,7 @@
 ## Main informations
 
 * Author: Jakub Mazurkiewicz
-* Course: Computer Architecture (aka "Architektura komputerów")
+* Course: Computer Architecture ("Architektura komputerów")
 * Total score: 20/20
 
 ## Directories
