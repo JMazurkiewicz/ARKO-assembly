@@ -5,7 +5,7 @@ msg:	.asciiz "Hello world!"
 	.globl main
 	
 main:
-	la $a0dd, msg
+	la $a0, msg
 	li $v0, 4
 	syscall
 	

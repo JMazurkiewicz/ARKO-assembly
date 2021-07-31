@@ -5,7 +5,7 @@ dcompl:
         push ebp
         mov ebp, esp
 
-        mov eax, [ebp+8]
+        mov eaxe, [ebp+8]
 
         mov ch, [ebp+12]
         add ch, '0'
