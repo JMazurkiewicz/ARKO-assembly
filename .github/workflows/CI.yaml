@@ -53,11 +53,13 @@ jobs:
     - name: Assemble training projects
       run: |
         cd ${{github.workspace}}/mips/training
-        for file in *.asm;
-          do java -jar ../Mars4_5.jar a ae1 $file;
+        for file in *.asm; do
+          echo Assembling $file.;
+          java -jar ../Mars4_5.jar nc a ae1 $file;
           done
         
     - name: Assemble main project (C.asm)
       run: |
         cd ${{github.workspace}}/mips/main-project
-        java -jar ../Mars4_5.jar a ae1 C.asm
+        echo Assembling main project (C.asm).
+        java -jar ../Mars4_5.jar nc a ae1 C.asm
