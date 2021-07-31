@@ -1,0 +1,4 @@
+# Executeables
+*.jar
+*.o
+*.out
