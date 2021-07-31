@@ -1,0 +1,50 @@
+name: "x86 and amd64 CI"
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    name: Install dependencies
+
+    steps:
+    - name: Install NASM
+      run: sudo apt-get install nasm
+
+    - name: Install GCC with 32-bit libraries
+      run: sudo apt-get install gcc gcc-multilib
+
+  build_small_project:
+    runs-on: ubuntu-latest
+    name: Build small project (dcompl)
+    needs: install
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build
+      run: |
+        cd ${{github.workspace}}/x86/small-project
+        make
+
+
+  build_main_project:
+    runs-on: ubuntu-latest
+    name: Build main project (sepia)
+    needs: install
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Build for x86
+      run: |
+        cd ${{github.workspace}}/x86/sepia
+        make x86
+
+    - name: Build for amd64
+      run: |
+        make x64
