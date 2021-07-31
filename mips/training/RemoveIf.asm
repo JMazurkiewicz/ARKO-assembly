@@ -1,5 +1,5 @@
 	.data
-prompt:	.asciiz "Podaj tekst: "
+prompt:	.asciiz "Enter text: "
 str:	.space 128
 
 	.text
@@ -14,10 +14,10 @@ main:
 	li $a1, 128
 	syscall
 	
-	la $t0, str # ¿ród³o
-	la $t1, str # cel
+	la $t0, str # source
+	la $t1, str # target
 	
-	# w tym przyk³adzie bêdziemy usuwaæ ma³e litery
+	# we are going to remove all small letters
 	li $t3, 'A'
 	li $t4, 'Z'
 	
@@ -27,7 +27,7 @@ loop:
 	
 	addiu $t0, $t0, 1
 	
-	# warunki nieusuniêcia
+	# "don't remove" conditions
 	bltu $t2, $t3, no_remove
 	bgtu $t2, $t4, no_remove
 	

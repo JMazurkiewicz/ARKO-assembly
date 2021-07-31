@@ -18,7 +18,3 @@ The goal is to create program transforming raw file into C-like array of bytes (
 
 * Small MIPS project: 3/3
 * Main MIPS project: 6/6
-
-## Comments
-
-Comments in `.asm` files are written in Polish language, the language of the course. You can easily translate them to English with Google Translate.

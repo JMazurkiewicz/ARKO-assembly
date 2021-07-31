@@ -1,5 +1,5 @@
 	.data
-prompt:	.asciiz "Podaj ciag cyfr: "
+prompt:	.asciiz "Enter digit sequence: "
 str:	.space 100
 
 	.text
@@ -19,7 +19,7 @@ main:
 	
 	li $t3, '0'
 	li $t4, '9'
-	li $t5, 9 # roznica miedzy '0' a '9'
+	li $t5, 9 # difference between '0' and '9'
 	
 loop:
 	lb $t1, ($t0)

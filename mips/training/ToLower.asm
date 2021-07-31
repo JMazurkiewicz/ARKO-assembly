@@ -1,5 +1,5 @@
 	.data
-prompt:	.asciiz "Podaj tekst: "
+prompt:	.asciiz "Enter text: "
 str:	.space 64
 
 	.text

@@ -1,5 +1,5 @@
 	.data
-info:	.asciiz "Argumenty programu:\n"
+info:	.asciiz "Program arguments:\n"
 
 	.text
 	.globl main

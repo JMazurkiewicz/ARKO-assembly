@@ -1,5 +1,5 @@
 	.data
-prompt:	.asciiz "Podaj tekst: "
+prompt:	.asciiz "Enter text: "
 str:	.space 64
 
 	.text
@@ -15,7 +15,7 @@ main:
 	li $a1, 64
 	syscall
 	
-	la $t0, str # w $t0 bedzie adres ostatniego elementu tekstu
+	la $t0, str # $t0 points to last element of text
 
 go_to_end:
 	lb $t1, ($t0)
@@ -24,15 +24,15 @@ go_to_end:
 	j go_to_end
 					
 continue:
-	subi $t0, $t0, 2 # -2, gdyz wskaznik wskazuje na '\0', a przed '\0' jest '\n'
+	subi $t0, $t0, 2 # -2, because pointer point to '\0' and before '\0' there is '\n'
 	
-	la $t1, str # adres pierwszego elementu
+	la $t1, str # address of first element
 	
 reverse:
 	bge $t1, $t0, end
 	
-	lb $t2, ($t1) # bierzemy znak od lewej
-	lb $t3, ($t0) # bierzemy znak od prawej
+	lb $t2, ($t1) # character from left
+	lb $t3, ($t0) # character from right
 	
 	sb $t2, ($t0)
 	sb $t3, ($t1)

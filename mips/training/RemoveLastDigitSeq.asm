@@ -33,7 +33,7 @@ find_next_nondigit:
         b find_next_nondigit
 
 continue:
-        move $t5, $t4 # dest
+        move $t5, $t4 # destination
 
 replace:
         lbu $t3, ($t4)

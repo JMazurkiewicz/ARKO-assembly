@@ -1,5 +1,5 @@
 	.data
-prompt: .asciiz "Podaj tekst: "
+prompt: .asciiz "Enter text: "
 str:	.space 64
 
 	.text
@@ -14,8 +14,8 @@ main:
 	li $a1, 64
 	syscall
 	
-	la $t0, str   # $t0 wskazuje na pierwszy znak tekstu
-	move $t1, $t0 # $t1 wskazuje na ostatni drukowalny znak tekstu
+	la $t0, str   # $t0 points to first character of text
+	move $t1, $t0 # $t1 points to last printable character of text
 	
 goto_end:
 	lbu $t2, ($t1)
@@ -26,7 +26,7 @@ goto_end:
 prepare_algo:
 	subiu $t1, $t1, 1
 	
-	# w tym wypadku bêdziemy odwracaæ kolejnoœæ tylko ma³ych liter
+	# we are going to reverse order of small letters only
 	li $t2, 'a'
 	li $t3, 'z'
 
