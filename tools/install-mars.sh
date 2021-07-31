@@ -8,8 +8,8 @@ install_path="."
 
 install() {
   local url="http://courses.missouristate.edu/kenvollmar/mars/MARS_4_5_Aug2014/Mars4_5.jar"
-  echo "${green}Downloading MARS from \"${url}\".${normal}"
-  wget $url
+  echo "${green}Installing MARS from \"${url}\" in \"`realpath ${install_path}`\".${normal}"
+  wget -P $install_path $url
 }
 
 if [[ $# -gt 1 ]]; then
@@ -19,8 +19,7 @@ else
     install_path=$1
   fi
 
-  cd $install_path &> /dev/null
-  if [[ $? -eq 0 ]]; then
+  if [[ -d $install_path ]]; then
     install
   else
     echo "${red}Invalid path \"${install_path}\".${normal}"

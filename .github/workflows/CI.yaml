@@ -48,7 +48,7 @@ jobs:
         java-version: '11'
 
     - name: Install MARS
-      run: ./tools/install-mars.sh ${{github.workspace}}/mips
+      run: source tools/install-mars.sh ${{github.workspace}}/mips
 
     - name: Assemble training projects
       run: |
