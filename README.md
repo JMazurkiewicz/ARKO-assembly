@@ -2,6 +2,8 @@
 
 ## Main informations
 
+[![CI](https://github.com/JMazurkiewicz/ARKO-assembly/actions/workflows/CI.yaml/badge.svg)](https://github.com/JMazurkiewicz/ARKO-assembly/actions/workflows/CI.yaml)
+
 * Author: Jakub Mazurkiewicz
 * Course: Computer Architecture ("Architektura komputerów")
 * Total score: 20/20

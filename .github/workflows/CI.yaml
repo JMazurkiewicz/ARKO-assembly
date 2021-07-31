@@ -41,7 +41,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - uses: actions/setup-java@v2
+      with:
+        distribution: 'adopt'
+        java-version: '11'
 
     - name: Install MARS
       run: wget -P ${{github.workspace}}/mips http://courses.missouristate.edu/kenvollmar/mars/MARS_4_5_Aug2014/Mars4_5.jar
