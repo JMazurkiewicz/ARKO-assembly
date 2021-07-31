@@ -5,7 +5,7 @@
 #include <string.h>
 
 const char* makeSepiaFileName(int fileId) {
-    static char buff[16];
+    static char buff[20];
     sprintf(buff, "sepia%d.bmp", fileId);
     return buff;
 }

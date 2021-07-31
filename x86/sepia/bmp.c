@@ -46,7 +46,7 @@ Bmp* readBmp(const char* fileName) {
         return NULL;
     }
 
-    const int absImageByteWidth = abs(imageByteWidth);
+    const size_t absImageByteWidth = abs(imageByteWidth);
 	for(int i = 0; i < image->height; ++i, bytes += imageByteWidth) {
 
         if(fread(bytes, 1, absImageByteWidth, file) < absImageByteWidth) {
@@ -144,7 +144,8 @@ void writeBmp(const Bmp* image, const char* fileName) {
     unsigned char* bytes = image->bytes + imageByteSize*(image->height - 1);
     for(int i = image->height; i--; bytes -= imageByteSize){
 
-		if(fwrite(bytes, 1, imageByteSize, file) != imageByteSize) {
+        const int writtenBytes = fwrite(bytes, 1, imageByteSize, file);
+		if(writtenBytes != imageByteSize) {
             fprintf(stderr, "Couldn't write pixel table to \"%s\"\n", fileName);
 			break;
 		}
