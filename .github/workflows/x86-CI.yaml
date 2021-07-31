@@ -27,9 +27,10 @@ jobs:
 
     - name: Build main project (sepia) for x86
       run: |
-        cd ../sepia
+        cd ${{github.workspace}}/x86/sepia
         make x86
 
     - name: Build main project (sepia) for amd64
       run: |
+        cd ${{github.workspace}}/x86/sepia
         make x64
