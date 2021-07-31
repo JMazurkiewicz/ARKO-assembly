@@ -61,5 +61,5 @@ jobs:
     - name: Assemble main project (C.asm)
       run: |
         cd ${{github.workspace}}/mips/main-project
-        echo Assembling main project (C.asm).
+        echo Assembling main project \(C.asm\).
         java -jar ../Mars4_5.jar nc a ae1 C.asm
