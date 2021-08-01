@@ -1,16 +1,14 @@
 #!/bin/bash
 
-TERM=linux
-
-red=$(tput setaf 1)
-green=$(tput setaf 2)
-normal=$(tput sgr0)
+red="\033[0;31m"
+green="\033[0;32m"
+normal="\033[0m"
 
 install_path="."
 
 install() {
   local url="http://courses.missouristate.edu/kenvollmar/mars/MARS_4_5_Aug2014/Mars4_5.jar"
-  echo "${green}Installing MARS from \"${url}\" in \"`realpath ${install_path}`\".${normal}"
+  echo -e "${green}Installing MARS from \"${url}\" in \"`realpath ${install_path}`\".${normal}"
   wget -P $install_path $url
 }
 
@@ -24,6 +22,6 @@ else
   if [[ -d $install_path ]]; then
     install
   else
-    echo "${red}Invalid path \"${install_path}\".${normal}"
+    echo -e "${red}Invalid path \"${install_path}\".${normal}"
   fi
 fi
