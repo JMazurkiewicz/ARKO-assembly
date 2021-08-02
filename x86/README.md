@@ -4,7 +4,7 @@
 
 ### Linux
 
-To build programs you will need `NASM` assembler. It can be installed with `apt-get` on Debian-based distros:
+To build programs you will need `NASM` assembler. It can be installed with `apt-get` on Debian-based distributions:
 
 ```bash
 sudo apt-get install nasm
@@ -48,7 +48,7 @@ make
 
 ## Main "sepia" project (x86 and amd64)
 
-The goal of the main project is to create program transforming `.bmp` file into sepia tonned file.
+The goal of the main project is to create program transforming `.bmp` file into sepia toned file.
 
 Building:
 

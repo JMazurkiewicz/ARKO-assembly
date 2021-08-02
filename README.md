@@ -1,6 +1,6 @@
 # Assembly projects
 
-## Main informations
+## Info
 
 [![CI](https://github.com/JMazurkiewicz/ARKO-assembly/actions/workflows/CI.yaml/badge.svg)](https://github.com/JMazurkiewicz/ARKO-assembly/actions/workflows/CI.yaml)
 
@@ -15,4 +15,4 @@
 
 ## Building and running
 
-See `README.md` in `mips` or `x86` directories to get more informations.
+See `README.md` in `mips` or `x86` directories to get more information.
